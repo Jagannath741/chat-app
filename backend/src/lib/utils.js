@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import crypto from "crypto";
 
 export const generateToken = (userId, res) => {
   const token = jwt.sign({ userId }, process.env.JWT_SECRET, {
@@ -13,4 +14,13 @@ export const generateToken = (userId, res) => {
   });
 
   return token;
+};
+
+/**
+ * Generates a base64 encoded random string of the given byte size.
+ * @param {number} size - Number of random bytes to generate.
+ * @returns {string} Base64 encoded random string.
+ */
+export const generateRandomBase64String = (size) => {
+  return crypto.randomBytes(size).toString('base64');
 };
