@@ -42,7 +42,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Start server and connect DB
-const PORT = process.env.PORT || 6060;
+const PORT = 5050;
 
 server.listen(PORT, () => {
     console.log(`🚀 Server running at http://127.0.0.1:${PORT}`);
